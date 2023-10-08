@@ -4,6 +4,7 @@ using UnityEngine;
 public class CreatingObjects : MonoBehaviour
 {
     [SerializeField] private GameObject[] _gameObjects;
+    [SerializeField] private Transform[] _spawnPoints;
 
     private void Start()
     {
@@ -14,18 +15,16 @@ public class CreatingObjects : MonoBehaviour
     {
         float dryingTimer = 2f;
         bool IsBeingCreated = true;
+        var delaySpawn = new WaitForSeconds(dryingTimer);
 
         while (IsBeingCreated)
         {
-            float minValue = -10f;
-            float maxValue = 10f;
-            float positionY = Random.Range(minValue, maxValue);
-            float positionX = Random.Range(minValue, maxValue);
-
             int index = Random.Range(0, _gameObjects.Length - 1);
+            int randomPoint = Random.Range(0, _spawnPoints.Length);
 
-            Instantiate(_gameObjects[index], new Vector3(positionY, 0f, positionX), Quaternion.identity);
-            yield return new WaitForSeconds(dryingTimer);
+            Instantiate(_gameObjects[index], _spawnPoints[randomPoint].position, Quaternion.identity);
+
+            yield return delaySpawn;
         }
     }
 }
