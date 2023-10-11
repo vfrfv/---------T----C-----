@@ -3,7 +3,6 @@ using UnityEngine;
 public class CarMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
-
    
     private void Update()
     {
