@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CreatingObjects : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _gameObjects;
+    [SerializeField] private GameObject[] _cars;
     [SerializeField] private Transform[] _spawnPoints;
 
     private void Start()
@@ -19,10 +19,10 @@ public class CreatingObjects : MonoBehaviour
 
         while (IsBeingCreated)
         {
-            int index = Random.Range(0, _gameObjects.Length - 1);
+            int index = Random.Range(0, _cars.Length - 1);
             int randomPoint = Random.Range(0, _spawnPoints.Length);
 
-            Instantiate(_gameObjects[index], _spawnPoints[randomPoint].position, Quaternion.identity);
+            Instantiate(_cars[index], _spawnPoints[randomPoint].position, Quaternion.identity);
 
             yield return delaySpawn;
         }
