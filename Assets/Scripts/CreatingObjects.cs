@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CreatingObjects : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _cars;
+    [SerializeField] private CarMovement[] _cars;
     [SerializeField] private Transform[] _spawnPoints;
 
     private void Start()
