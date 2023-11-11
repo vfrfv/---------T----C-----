@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class CreatingObjects : MonoBehaviour
+public class PoliceSpawn: MonoBehaviour
 {
-    [SerializeField] private CarMovement[] _cars;
+    [SerializeField] private Police _police;
     [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] private Racer[] _racer;
 
     private void Start()
     {
@@ -13,16 +14,18 @@ public class CreatingObjects : MonoBehaviour
 
     private IEnumerator Creating()
     {
-        float dryingTimer = 2f;
+        float dryingTimer = 3f;
         bool IsBeingCreated = true;
         var delaySpawn = new WaitForSeconds(dryingTimer);
 
         while (IsBeingCreated)
         {
-            int index = Random.Range(0, _cars.Length - 1);
+            int randomRacer = Random.Range(0, _racer.Length);
             int randomPoint = Random.Range(0, _spawnPoints.Length);
 
-            Instantiate(_cars[index], _spawnPoints[randomPoint].position, Quaternion.identity);
+            Police police = Instantiate(_police, _spawnPoints[randomPoint].position, Quaternion.identity);
+
+            police.Initialize(_racer[randomRacer]);
 
             yield return delaySpawn;
         }
