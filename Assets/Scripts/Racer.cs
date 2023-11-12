@@ -19,8 +19,6 @@ public class Racer : MonoBehaviour
         transform.LookAt(target.position);
         transform.position = Vector3.MoveTowards(transform.position, target.position, _speed * Time.deltaTime);
 
-        //var direction = target.position - transform.position;
-
         if(transform.position == target.position)
         {
             _currentPoint++;
