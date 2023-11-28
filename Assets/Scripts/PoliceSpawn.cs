@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PoliceSpawn: MonoBehaviour
 {
-    [SerializeField] private Police _police;
+    [SerializeField] private GameObject[] _cars;
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private Racer[] _racer;
 
