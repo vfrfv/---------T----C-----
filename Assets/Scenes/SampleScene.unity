@@ -264,7 +264,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8239ff5746d091d469b2edb395314ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _police: {fileID: 7947929062848378469, guid: f463242ba59e68243b7a693d4f0cfc18, type: 3}
+  _cars:
+  - {fileID: 4695957159649180562, guid: d8a38e887e96d694894a36eaf7ec145b, type: 3}
+  - {fileID: 2672864514906475514, guid: 22c9c216bad815c41ab718efa15f912b, type: 3}
+  - {fileID: 864538881232866547, guid: a686086459191ea4994078fe68c2bf63, type: 3}
+  - {fileID: 4849416383976443089, guid: 1d0173f883989e14493677c41ae5a073, type: 3}
+  - {fileID: 2749458917958626468, guid: 70b6b2f84042c5546b88956fe74b0c66, type: 3}
+  - {fileID: 2270258410762528488, guid: 2eeca4fa75195b14d9063034a4d2c63f, type: 3}
+  - {fileID: 2686982419682777703, guid: dc8c2427d4e766843b3b93ad9de149ba, type: 3}
+  - {fileID: 1900681226621404113, guid: 7e4d049e6a79539479a2e9e98c071bfe, type: 3}
   _spawnPoints:
   - {fileID: 1159925487}
   - {fileID: 1319495036}
